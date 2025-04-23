@@ -1,0 +1,51 @@
+@use 'variables';
+
+html {
+  box-sizing: border-box;
+  font-size: variables.$font-size-base;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'FuturaStdBold', Arial, sans-serif;
+  color: variables.$text-color-light;
+  background-color: variables.$bg-color;
+  margin: 0;
+  padding: 0;
+  line-height: variables.$line-height-base;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
