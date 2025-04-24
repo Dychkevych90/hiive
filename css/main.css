@@ -256,10 +256,14 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 15px 0;
+}
+.seasons-row .main_block .top img {
+  height: 370px;
 }
 .seasons-row .main_block .bottom {
   padding: 15px 30px 40px;
-  background: #D5D1C5;
+  background: #402417;
   margin: 0;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -268,10 +272,11 @@ a:hover {
   font-size: 18px;
   line-height: 24px;
   text-align: left;
+  min-height: 300px;
 }
 
 .benefits {
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   width: 100%;
 }
 .benefits .container {
@@ -287,7 +292,7 @@ a:hover {
   display: flex;
   align-items: center;
   width: 100%;
-  max-height: 64px;
+  max-height: 74px;
 }
 .benefits .section-column--item .left {
   flex: 1;
@@ -298,7 +303,7 @@ a:hover {
   justify-content: center;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
-  height: 64px;
+  height: 74px;
 }
 .benefits .section-column--item .left img {
   width: 55px;
@@ -309,7 +314,7 @@ a:hover {
   background-color: #D5D1C5;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  height: 64px;
+  height: 74px;
   color: #402417;
   font-size: 28px;
   line-height: 27px;
@@ -326,9 +331,144 @@ a:hover {
   font-size: 40px;
   line-height: 48px;
 }
+.benefits-desc {
+  width: 100%;
+  color: #402417;
+  text-align: center;
+  margin: 0 0 40px;
+  font-size: 30px;
+  line-height: 38px;
+}
 
 .video-block video {
   width: 100%;
+}
+
+.section-5 .top {
+  text-transform: uppercase;
+}
+
+.section-7 .main_block {
+  z-index: 10;
+  background: #D5D1C5;
+  border-radius: 20px;
+}
+.section-7 .main_block .top {
+  background: #D5D1C5;
+  text-align: center;
+  font-weight: bold;
+  padding: 40px 0 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin: 0;
+  font-size: 45px;
+  line-height: 48px;
+}
+.section-7 .main_block .line {
+  width: 90%;
+  height: 2px;
+  background-color: #fff;
+  margin: 20px auto;
+}
+.section-7 .main_block p {
+  padding: 15px 50px 40px;
+  text-align: center;
+  background: #D5D1C5;
+  margin: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.section-7 .main_block .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.section-7 .main_block .row .left {
+  font-weight: bold;
+  color: #f58220;
+  font-size: 35px;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  min-width: 160px;
+  text-align: right;
+}
+.section-7 .main_block .row .right {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.section-7 .main_block .row .right .top {
+  font-size: 28px;
+  line-height: 20px;
+  padding-left: 30px;
+  padding-top: 0;
+}
+.section-7 .main_block .row .right .bottom {
+  font-size: 22px;
+  line-height: 25px;
+}
+
+.section-bg-bees:before {
+  content: "";
+  background: url("../images/1.png") no-repeat center top/cover;
+}
+
+.section-8 .section-2 {
+  position: relative;
+}
+.section-8 .bee {
+  position: absolute;
+  left: -12px;
+  top: -18px;
+  object-fit: contain;
+  min-width: 140px;
+}
+.section-8 .row {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+.section-8 .row .block {
+  flex: 50%;
+  min-height: 350px;
+  border-radius: 20px;
+}
+.section-8 .row .block:nth-child(1) {
+  background-color: #EB8922;
+  margin-right: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 45px;
+  line-height: 46px;
+  padding: 20px;
+  text-align: center;
+}
+.section-8 .row .block:nth-child(2) {
+  background-color: #402417;
+}
+.section-8 .text {
+  color: #402417;
+  text-align: center;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 100px;
+}
+
+.picture-section {
+  width: 100%;
+  min-height: 100vh;
+}
+.picture-section img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: top;
 }
 
 /*# sourceMappingURL=main.css.map */
