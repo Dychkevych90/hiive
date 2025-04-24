@@ -64,7 +64,7 @@
   background: linear-gradient(0deg, #FEF9ED 0.9%, rgba(254, 249, 237, 0.890711) 12.9%, rgba(254, 249, 237, 0.789167) 16.44%, rgba(205, 249, 237, 0.500978) 27.79%, rgba(254, 249, 237, 0.231221) 36.56%, rgba(254, 249, 237, 0) 41%);
   height: 100vh;
   position: relative;
-  margin-bottom: 150px;
+  margin-bottom: 120px;
 
   &:before {
     content: '';
@@ -89,17 +89,18 @@
 
   h3 {
     text-align: center;
-    font-size: 40px;
+    font-size: 33px;
+    line-height: 28px;
     margin: 0;
-    padding: 10px 0;
+    padding: 10px 0 5px;
     color: variables.$primary-color;
   }
 
   h2 {
     color: #000;
     font-weight: bold;
-    font-size: 50px;
-    line-height: 68px;
+    font-size: 45px;
+    line-height: 60px;
     text-align: center;
   }
 
@@ -111,19 +112,18 @@
     .top {
       background: variables.$secondary-color;
       text-align: center;
-      color: #fff;
       font-weight: bold;
-      padding: 20px 0 10px;
+      padding: 20px 0 5px;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       margin: 0;
-      font-size: 45px;
-      line-height: 48px;
+      font-size: 35px;
+      line-height: 44px;
     }
 
     .line {
       width: 90%;
-      height: 2px;
+      height: 1px;
       background-color: #fff;
       margin: 20px auto
     }
@@ -135,9 +135,9 @@
       margin: 0;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-      color: #fff;
       font-weight: 700;
       font-size: 20px;
+      line-height: 25px;
     }
   }
 }
@@ -161,9 +161,8 @@
 
       .title {
         text-align: center;
-        color: #fff;
         font-weight: bold;
-        padding: 20px 0 10px;
+        padding: 8px 0 2px;
         margin: 0;
         font-size: 30px;
         line-height: 40px;
@@ -171,12 +170,26 @@
 
       .subtitle {
         text-align: center;
-        color: #fff;
         font-weight: bold;
         padding: 0px 0 30px;
         margin: 0;
         font-size: 20px;
         line-height: 28px;
+      }
+
+      .custom-title {
+        font-weight: 700;
+        font-size: 1.6rem; /* adjust as needed */
+        color: #e8381f; /* red text */
+        text-shadow:
+                -2px -2px 0 #fff,
+                2px -2px 0 #fff,
+                -2px  2px 0 #fff,
+                2px  2px 0 #fff,
+                -2px  0px 0 #fff,
+                2px  0px 0 #fff,
+                0px -2px 0 #fff,
+                0px  2px 0 #fff;
       }
 
       .content_block {
@@ -198,9 +211,8 @@
       margin: 0;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-      color: #fff;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 19px;
       line-height: 24px;
       text-align: left;
     }
@@ -220,7 +232,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
+  gap: 60px;
   width: 100%;
 
   .main_block {
@@ -247,7 +259,6 @@
       margin: 0;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-      color: #fff;
       font-weight: 700;
       font-size: 18px;
       line-height: 24px;
@@ -258,7 +269,7 @@
 }
 
 .benefits {
-  margin-bottom: 150px;
+  margin-bottom: 200px;
   width: 100%;
 
   .container {
@@ -269,13 +280,13 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 30px;
+    gap: 20px;
 
     &--item {
       display: flex;
       align-items: center;
       width: 100%;
-      max-height: 74px;
+      max-height: 68px;
 
       .left {
         flex: 1;
@@ -284,9 +295,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-        height: 74px;
+        border-top-left-radius: 32px;
+        border-bottom-left-radius: 32px;
+        height: 68px;
 
         img {
           width: 55px;
@@ -297,11 +308,11 @@
       .right {
         flex: 2;
         background-color: variables.$secondary-color;
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-        height: 74px;
+        border-top-right-radius: 32px;
+        border-bottom-right-radius: 32px;
+        height: 68px;
         color: variables.$text-color-dark;
-        font-size: 28px;
+        font-size: 26px;
         line-height: 27px;
         padding-left: 20px;
         display: flex;
@@ -315,7 +326,7 @@
     width: 100%;
     color: variables.$text-color-dark;
     text-align: center;
-    margin: 140px 0 20px;
+    margin: 140px 0 5px;
     font-size: 40px;
     line-height: 48px;
   }
@@ -324,7 +335,7 @@
     width: 100%;
     color: variables.$text-color-dark;
     text-align: center;
-    margin: 0 0 40px;
+    margin: 0 0 35px;
     font-size: 30px;
     line-height: 38px;
   }
@@ -337,8 +348,15 @@
 }
 
 .section-5 {
-  .top {
-    text-transform: uppercase;
+  .main_block {
+    .top {
+      text-transform: uppercase;
+      padding-top: 30px;
+    }
+
+    p {
+      padding-bottom: 70px;
+    }
   }
 }
 
@@ -375,7 +393,8 @@
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
       font-weight: 700;
-      font-size: 20px;
+      font-size: 22px;
+      line-height: 25px;
     }
 
     .row {
@@ -384,16 +403,20 @@
       align-items: center;
       justify-content: center;
       gap: 50px;
-      margin-bottom: 50px;
+      margin-bottom: 70px;
 
       .left {
         font-weight: bold;
         color: #f58220;
         font-size: 35px;
-        text-shadow: -1px -1px 0 #fff,
-        1px -1px 0 #fff,
-        -1px 1px 0 #fff,
-        1px 1px 0 #fff;
+        text-shadow: -2px -2px 0 #fff,
+        2px -2px 0 #fff,
+        -2px  2px 0 #fff,
+        2px  2px 0 #fff,
+        -2px  0px 0 #fff,
+        2px  0px 0 #fff,
+        0px -2px 0 #fff,
+        0px  2px 0 #fff;
         min-width: 160px;
         text-align: right;
       }
@@ -443,13 +466,13 @@
   .row {
     display: flex;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 150px;
+    margin-top: 35px;
+    margin-bottom: 250px;
 
     .block {
       flex: 50%;
-      min-height: 350px;
-      border-radius: 20px;
+      min-height: 300px;
+      border-radius: 15px;
     }
 
     .block:nth-child(1) {
@@ -458,7 +481,7 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      font-size: 45px;
+      font-size: 40px;
       line-height: 46px;
       padding: 20px;
       text-align: center;
@@ -475,6 +498,7 @@
     font-size: 25px;
     line-height: 30px;
     margin-bottom: 100px;
+    font-weight: bold;
   }
 }
 
