@@ -386,6 +386,7 @@
   position: relative;
   min-height: 100vh;
   width: 100%;
+  overflow: hidden;
 
   video {
     height: 100vh; // or min-height: 100vh
@@ -397,21 +398,112 @@
 
   .season-card {
     position: absolute;
-    top: 20%;
-    right: -300px; /* off screen initially */
-    background: #333;
-    color: white;
-    padding: 20px 30px;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    z-index: 1000;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
+    top: 50px;
+    right: 15%;
+    max-width: 300px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: variables.$bg-color;
+    z-index: 2;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(250%);
+
+    .top {
+      border-radius: 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      .img-container {
+        background-color: variables.$primary-color;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        min-height: 150px;
+      }
+
+      .title {
+        background-color: variables.$secondary-color;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        font-size: 21px;
+      }
+    }
+
+    .bottom {
+        padding: 20px 30px 40px;
+        color: variables.$text-color-dark;
+        margin: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 18px;
+        text-align: left;
+    }
   }
 
   .season-card.show {
-    transform: translateX(-320px); /* slide into view */
+    //transform: translateX(-320px); /* slide into view */
     opacity: 1;
+    right: 15%;
+    transform: translateX(0px);
+  }
+
+  .env-box {
+    position: absolute;
+    display: inline-block;
+    top: 100px;
+    left: 25%;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    padding: 4px;
+    box-shadow: 4px 4px 0 #bbb; /* mimic 3D block */
+    font-family: sans-serif;
+    min-width: 180px;
+  }
+
+  .env-label {
+    background-color: #d4822b; /* orange */
+    color: #fff;
+    padding: 4px 8px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    top: -12px;
+    left: 8px;
+  }
+
+  .env-data {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #999;
+    padding: 6px;
+    margin-top: 12px;
+  }
+
+  .env-item {
+    background-color: #3d3d3d;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 6px 12px;
+    text-align: center;
+    margin: 4px 0;
   }
 }
 
