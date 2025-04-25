@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Project</title>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="preload" as="image" href="./images/heroBgCompressed.jpg" />
 </head>
 <body>
 <main>
@@ -63,7 +64,7 @@
   </section>
 
   <section class="section-bg section-animate">
-    <img id="scroll-image" src="./images/heroBg.jpg" alt="">
+    <img id="scroll-image" src="./images/heroBgCompressed.jpg" alt="image" loading="eager">
     <div class="container">
       <div class="section-2 animated-text">
         <h3>Tree Hollow as Standard</h3>
@@ -281,10 +282,14 @@
   </section>
 
   <div class="video-block">
-    <video autoplay muted loop>
+    <video id="season-video" autoplay muted loop>
       <source src="./images/video/new_seasons.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+
+<!--    <div class="season-card" id="season-card">-->
+<!--      <h3 id="season-title">Winter</h3>-->
+<!--    </div>-->
   </div>
 
   <section class="picture-section">
@@ -350,7 +355,7 @@
     { opacity: 0, y: 50 },
     {
       scrollTrigger: {
-        trigger: ".section-animate",
+        trigger: ".animated-text",
         start: "bottom bottom", // when bottom of section hits bottom of viewport
         toggleActions: "play none none none",
       },
