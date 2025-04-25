@@ -104,21 +104,36 @@ a:hover {
   height: 100vh;
   position: relative;
   margin-bottom: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.section-bg:before {
-  content: "";
-  background: url("../images/heroBg.jpg") no-repeat center top/cover;
-  width: 100%;
-  height: 100%;
+.section-bg .gradient-block {
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  right: 0;
+  height: 100vh; /* or as needed */
+  background: linear-gradient(0deg, #FEF9ED 0.9%, rgba(254, 249, 237, 0.890711) 12.9%, rgba(254, 249, 237, 0.789167) 16.44%, rgba(205, 249, 237, 0.500978) 27.79%, rgba(254, 249, 237, 0.231221) 36.56%, rgba(254, 249, 237, 0) 41%);
+  opacity: 0;
+  transform: translateY(50px);
+  pointer-events: none; /* just to be safe */
+}
+.section-bg #scroll-image {
+  width: 80%;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  position: absolute;
+  bottom: 0;
 }
 .section-bg .container {
   align-items: flex-end;
   justify-content: center;
-  height: 100vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 70px;
+  z-index: 10;
 }
 
 .section-2 {

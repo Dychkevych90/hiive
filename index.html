@@ -62,13 +62,17 @@
     </div>
   </section>
 
-  <section class="section-bg">
+  <section class="section-bg section-animate">
+    <img id="scroll-image" src="./images/heroBg.jpg" alt="">
     <div class="container">
-      <div class="section-2">
+      <div class="section-2 animated-text">
         <h3>Tree Hollow as Standard</h3>
         <h2>What advantages does nature <br/> offer Apis mellifera?</h2>
       </div>
     </div>
+<!--    <div class="shadow"></div>-->
+    <!-- 👇 Gradient block at bottom -->
+    <div class="gradient-block"></div>
   </section>
 
   <section class="section-3" style="margin-bottom: 25px;" >
@@ -298,6 +302,66 @@
 <!--      </video>-->
 <!--    </div>-->
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to("#scroll-image",{
+    scrollTrigger: {
+      trigger: ".section-animate",
+      start: "top center",   // when section2 top hits center of screen
+      end: "bottom center",  // when section2 bottom hits center
+      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    },
+    width: "100%",
+    y: 0,
+    ease: "power2.out",
+  });
+
+  // gsap.from(".animated-text", {
+  //   scrollTrigger: {
+  //     trigger: ".section-animate",
+  //     start: "center center",  // when image animation is halfway done
+  //     toggleActions: "play none none none",
+  //   },
+  //   opacity: 0, // start invisible
+  //   y: 50,      // start 50px lower
+  //   duration: 1,
+  //   ease: "power2.out",
+  // })
+
+  gsap.from(".animated-text", {
+    scrollTrigger: {
+      trigger: ".animated-text",
+      start: "top 80%",            // when top of .section-2 hits 80% of viewport
+      toggleActions: "play none none reset", // 👈 allows replay when re-entering
+      markers: false,              // optional: show scroll markers
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+
+  gsap.fromTo(".gradient-block",
+    { opacity: 0, y: 50 },
+    {
+      scrollTrigger: {
+        trigger: ".section-animate",
+        start: "bottom bottom", // when bottom of section hits bottom of viewport
+        toggleActions: "play none none none",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+    }
+  );
+
+</script>
 <script src="js/script.js"></script>
 </body>
 </html>
