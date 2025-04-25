@@ -6,12 +6,14 @@
   src: url('../fonts/FuturaStdBold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'FuturaStdR';
   src: url('../fonts/FuturaStdMedium.otf') format('opentype');
   font-weight: 500;
+  font-display: swap;
 }
 
 .hero {
