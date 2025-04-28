@@ -71,8 +71,7 @@
         <h2>What advantages does nature <br/> offer Apis mellifera?</h2>
       </div>
     </div>
-<!--    <div class="shadow"></div>-->
-    <!-- 👇 Gradient block at bottom -->
+
     <div class="gradient-block"></div>
   </section>
 
@@ -287,7 +286,6 @@
       Your browser does not support the video tag.
     </video>
 
-<!--    -->
     <div id="season-card" class="season-card" >
       <div class="top">
         <div class="img-container">
@@ -367,9 +365,9 @@
   gsap.from(".animated-text", {
     scrollTrigger: {
       trigger: ".animated-text",
-      start: "top 80%",            // when top of .section-2 hits 80% of viewport
-      toggleActions: "play none none reset", // 👈 allows replay when re-entering
-      markers: false,              // optional: show scroll markers
+      start: "top 80%",
+      toggleActions: "play none none reset",
+      markers: false,
     },
     opacity: 0,
     y: 50,
@@ -383,7 +381,7 @@
     {
       scrollTrigger: {
         trigger: ".animated-text",
-        start: "bottom bottom", // when bottom of section hits bottom of viewport
+        start: "bottom bottom",
         toggleActions: "play none none none",
       },
       opacity: 1,

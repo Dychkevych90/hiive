@@ -3,6 +3,7 @@ const seasonCard = document.querySelector('.season-card');
 const seasonTitle = seasonCard.querySelector('.title');
 const seasonText = seasonCard.querySelector('.bottom');
 const seasonImg = seasonCard.querySelector('img');
+const envBox = document.querySelector('.env-box');
 
 const SEASON_DATA = {
   Winter: {
@@ -38,15 +39,10 @@ const SEASON_DATA = {
   Summer: {
     title: "COOLING",
     text: `The constant insulation performance of
-thermo-hemp allows for the replication of a tree cavity in an approximately
-220-500-year-old oak tree.`,
+    thermo-hemp allows for the replication of a tree cavity in an approximately
+    220-500-year-old oak tree.`,
     icon: './images/icons/summer.svg'
   },
-  // Autumn: {
-  //   title: "PREPARING FOR WINTER",
-  //   text: `Bees reduce activity and start storing food for winter...`,
-  //   icon: './images/icons/snowflake.svg'
-  // }
 };
 
 let currentSeason = '';
@@ -63,11 +59,13 @@ function showSeason(season) {
 
     // Show card
     seasonCard.classList.add('show');
+    envBox.classList.add('show');
 
     // Hide after 4s
     clearTimeout(hideTimeout);
     hideTimeout = setTimeout(() => {
       seasonCard.classList.remove('show');
+      envBox.classList.remove('show');
     }, 4000);
   }
 }
@@ -84,5 +82,4 @@ video.addEventListener('timeupdate', () => {
   if (time < 5) showSeason('Winter');
   else if (time < 10) showSeason('Spring');
   else if (time < 15) showSeason('Summer');
-  //else if (time < 20) showSeason('Autumn');
 });

@@ -443,6 +443,13 @@ a:hover {
   box-shadow: 4px 4px 0 #bbb; /* mimic 3D block */
   font-family: sans-serif;
   min-width: 180px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-500%);
+}
+.video-block .env-box.show {
+  opacity: 1;
+  left: 25%;
+  transform: translateX(0);
 }
 .video-block .env-label {
   background-color: #d4822b; /* orange */
@@ -549,6 +556,12 @@ a:hover {
 .section-bg-bees:before {
   content: "";
   background: url("../images/1.png") no-repeat center top/cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .section-8 .section-2 {
