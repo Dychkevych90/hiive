@@ -83,3 +83,43 @@ video.addEventListener('timeupdate', () => {
   else if (time < 10) showSeason('Spring');
   else if (time < 15) showSeason('Summer');
 });
+
+
+
+
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll(".dot-nav a");
+
+// Scroll to section when clicking dot
+navLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("data-section");
+    const target = document.getElementById(targetId);
+    window.scrollTo({
+      top: target.offsetTop,
+      behavior: "smooth"
+    });
+  });
+});
+
+// Highlight active dot when scrolling
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("data-section") === current) {
+      link.classList.add("active");
+    }
+  });
+});
+

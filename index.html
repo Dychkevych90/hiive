@@ -9,7 +9,20 @@
 </head>
 <body>
 <main>
-  <section class="hero benefits">
+
+  <!-- Vertical Dots Navigation -->
+  <nav class="dot-nav">
+    <ul>
+      <li><a href="#section1" data-section="section1" class="active"><span class="dot"></span><span class="label">Benefits</span></a></li>
+      <li><a href="#section2" data-section="section2"><span class="dot"></span><span class="label">Section 2</span></a></li>
+      <li><a href="#section3" data-section="section3"><span class="dot"></span><span class="label">Section 3</span></a></li>
+      <li><a href="#section4" data-section="section4"><span class="dot"></span><span class="label">Section 4</span></a></li>
+      <li><a href="#section5" data-section="section5"><span class="dot"></span><span class="label">Section 5</span></a></li>
+      <li><a href="#section6" data-section="section6"><span class="dot"></span><span class="label">Section 6</span></a></li>
+    </ul>
+  </nav>
+
+  <section id="section1" class="section hero benefits">
     <div class='container'>
       <div class="main_block">
         <h2>Artgerecht. Nach dem Vorbild der Natur.</h2>
@@ -63,7 +76,7 @@
     </div>
   </section>
 
-  <section class="section-bg section-animate">
+  <section id="section2" class="section section-bg section-animate">
     <img id="scroll-image" src="./images/heroBgCompressed.jpg" alt="image" loading="eager">
     <div class="container">
       <div class="section-2 animated-text">
@@ -75,7 +88,7 @@
     <div class="gradient-block"></div>
   </section>
 
-  <section class="section-3" style="margin-bottom: 25px;" >
+  <section id="section3" class="section section-3" style="margin-bottom: 25px;" >
     <div class="container">
       <div class="section-2">
         <div class="main_block">
@@ -91,14 +104,12 @@
     </div>
   </section>
 
-  <section class="section-4" style="margin-bottom: 35px;">
+  <section id="section4" class="section section-4" style="margin-bottom: 35px;">
     <div class="container">
       <div class="section-row">
         <div class="main_block">
           <div class="top">
-            <div class="title">living wood</div>
-            <img src='./images/livingWood.svg' alt="icon">
-            <div class="subtitle">oak wood in<br/>winter 0,2 - 0,3 W/(m·K)</div>
+            <img class="single_hydro_dynamic" src='./images/HydroDynamic_I.png' alt="icon">
           </div>
           <div class="line"></div>
           <p>TIn winter, bees exert a
@@ -115,20 +126,11 @@
 
         <div class="main_block">
           <div class="top">
-            <div class="title">dead wood</div>
-            <div class="content_block" style="justify-content: center">
-              <img src='./images/livingWood.svg' alt="icon">
-              <img style="min-width: 100px;max-width: 100px;max-height: 150px;" src='./images/icons/beeWaterArrow.svg' alt="icon">
-              <img src='./images/livingWood.svg' alt="icon">
-            </div>
-            <div class="content_block">
-              <div class="subtitle">dry oak wood<br/>0,15 W/(m·K)</div>
-              <div class="subtitle">wet oak wood<br/><div class='custom-title'>0,4-0,6W/(mK)</div></div>
-            </div>
+            <img class="double_hydro_dynamic" src='./images/HydroDynamic_II.png' alt="icon">
           </div>
 
           <div>
-            <p style="height: 268px;">Dead wood, on the other
+            <p style="height: 245px;">Dead wood, on the other
               hand, has a very limited ability
               to absorb moisture. It can only
               store a small amount and loses
@@ -143,7 +145,7 @@
     </div>
   </section>
 
-  <section class="section-5" style="margin-bottom: 50px;">
+  <section id="section5" class="section section-5" style="margin-bottom: 50px;">
     <div class="container">
       <div class="section-2">
         <div class="main_block">
@@ -159,12 +161,12 @@
     </div>
   </section>
 
-  <section class="section-6" style="margin-bottom: 100px;">
+  <section id="section6" class="section section-6" style="margin-bottom: 100px;">
     <div class="container">
       <div class="seasons-row">
         <div class="main_block">
           <div class="top">
-            <img src='./images/winter.svg' alt="icon">
+            <img src='./images/icons/ThermoDynamic (1).svg' alt="icon">
           </div>
           <div class='bottom' >As is well known,
             bees form a heat
@@ -181,7 +183,7 @@
 
         <div class="main_block">
           <div class="top">
-            <img src='./images/spring.svg' alt="icon">
+            <img src='./images/icons/ThermoDynamic_II.svg' alt="icon">
           </div>
           <div class='bottom' >In early spring, when
             crocuses, snowdrops,
@@ -198,7 +200,7 @@
 
         <div class="main_block">
           <div class="top">
-            <img src='./images/summer.svg' alt="icon">
+            <img src='./images/icons/ThermoDynamic_III.svg' alt="icon">
           </div>
           <div class='bottom' >In summer, the bees
             whirl cylindrically like
@@ -215,7 +217,7 @@
     </div>
   </section>
 
-  <section class="section-7" style="margin-bottom: 30px;" >
+  <section class="section-7" style="margin-bottom: 150px;" >
     <div class="container">
         <div class="main_block">
           <div class="top">HONEY = ENERGY</div>
@@ -242,13 +244,16 @@
     </div>
   </section>
 
-  <section class="section-bg section-bg-bees">
+  <section class="section-bg section-animate-bee">
+    <img id="scroll-image-bee" src="./images/1.jpg" alt="image">
     <div class="container">
-      <div class="section-2">
+      <div class="section-2 animated-text-bee">
         <h3>Species-appropriate</h3>
         <h2>How does HIIVE make a <br/>difference for your bees?</h2>
       </div>
     </div>
+
+    <div class="gradient-block-bee"></div>
   </section>
 
   <section class="section section-8" style="margin-bottom: 30px;" >
@@ -324,13 +329,6 @@
   <section class="picture-section">
     <img src="./images/picture.jpg" alt="image">
   </section>
-
-<!--    <div class="video-block">-->
-<!--      <video autoplay muted loop>-->
-<!--        <source src="./images/video/HERO.mp4" type="video/mp4">-->
-<!--        Your browser does not support the video tag.-->
-<!--      </video>-->
-<!--    </div>-->
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -338,6 +336,7 @@
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
+  /* Hero block animated */
   gsap.to("#scroll-image",{
     scrollTrigger: {
       trigger: ".section-animate",
@@ -349,18 +348,6 @@
     y: 0,
     ease: "power2.out",
   });
-
-  // gsap.from(".animated-text", {
-  //   scrollTrigger: {
-  //     trigger: ".section-animate",
-  //     start: "center center",  // when image animation is halfway done
-  //     toggleActions: "play none none none",
-  //   },
-  //   opacity: 0, // start invisible
-  //   y: 50,      // start 50px lower
-  //   duration: 1,
-  //   ease: "power2.out",
-  // })
 
   gsap.from(".animated-text", {
     scrollTrigger: {
@@ -375,12 +362,53 @@
     ease: "power2.out"
   });
 
-
   gsap.fromTo(".gradient-block",
     { opacity: 0, y: 50 },
     {
       scrollTrigger: {
         trigger: ".animated-text",
+        start: "bottom bottom",
+        toggleActions: "play none none none",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+    }
+  );
+
+  /* Bees block animated */
+
+  gsap.to("#scroll-image-bee",{
+    scrollTrigger: {
+      trigger: ".section-animate-bee",
+      start: "top center",   // when section2 top hits center of screen
+      end: "bottom center",  // when section2 bottom hits center
+      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    },
+    width: "100%",
+    y: 0,
+    ease: "power2.out",
+  });
+
+  gsap.from(".animated-text-bee", {
+    scrollTrigger: {
+      trigger: ".animated-text-bee",
+      start: "top 80%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+  gsap.fromTo(".gradient-block-bee",
+    { opacity: 0, y: 50 },
+    {
+      scrollTrigger: {
+        trigger: ".animated-text-bee",
         start: "bottom bottom",
         toggleActions: "play none none none",
       },

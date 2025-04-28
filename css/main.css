@@ -110,9 +110,10 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
-.section-bg .gradient-block {
+.section-bg .gradient-block,
+.section-bg .gradient-block-bee {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   right: 0;
   height: 100vh; /* or as needed */
@@ -121,7 +122,8 @@ a:hover {
   transform: translateY(50px);
   pointer-events: none; /* just to be safe */
 }
-.section-bg #scroll-image {
+.section-bg #scroll-image,
+.section-bg #scroll-image-bee {
   width: 80%;
   transform: translateY(0);
   transition: transform 0.3s ease;
@@ -197,7 +199,7 @@ a:hover {
   justify-content: center;
 }
 .section-row .main_block {
-  min-height: 555px;
+  min-height: 525px;
 }
 .section-row .main_block .top {
   background: #EB8922;
@@ -207,37 +209,14 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 15px;
 }
-.section-row .main_block .top .title {
-  text-align: center;
-  font-weight: bold;
-  padding: 8px 0 2px;
-  margin: 0;
-  font-size: 30px;
-  line-height: 40px;
+.section-row .main_block .top .single_hydro_dynamic {
+  max-width: 300px;
+  object-fit: contain;
 }
-.section-row .main_block .top .subtitle {
-  text-align: center;
-  font-weight: bold;
-  padding: 0px 0 30px;
-  margin: 0;
-  font-size: 20px;
-  line-height: 28px;
-}
-.section-row .main_block .top .custom-title {
-  font-weight: 700;
-  font-size: 1.6rem; /* adjust as needed */
-  color: #e8381f; /* red text */
-  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -2px 0px 0 #fff, 2px 0px 0 #fff, 0px -2px 0 #fff, 0px 2px 0 #fff;
-}
-.section-row .main_block .top .content_block {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-around;
-}
-.section-row .main_block .top img {
-  min-width: 180px;
+.section-row .main_block .top .double_hydro_dynamic {
+  max-height: 228px;
   object-fit: contain;
 }
 .section-row .main_block p {
@@ -252,11 +231,11 @@ a:hover {
   text-align: left;
 }
 .section-row .main_block:nth-child(1) {
-  width: 40%;
+  width: 45%;
   margin-right: 30px;
 }
 .section-row .main_block:nth-child(2) {
-  width: 60%;
+  width: 55%;
 }
 
 .seasons-row {
@@ -555,7 +534,7 @@ a:hover {
 
 .section-bg-bees:before {
   content: "";
-  background: url("../images/1.png") no-repeat center top/cover;
+  background: url("../images/1.jpg") no-repeat center top/cover;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -617,6 +596,70 @@ a:hover {
   height: 100vh;
   object-fit: cover;
   object-position: top;
+}
+
+.dot-nav {
+  position: fixed;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1000;
+}
+.dot-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dot-nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.dot-nav ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #999;
+  position: relative;
+}
+.dot-nav ul li a .dot {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(35, 37, 38, 0.9);
+  border-radius: 50%;
+  transform: scale(1.3);
+}
+.dot-nav ul li a .label {
+  margin-left: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.dot-nav ul li a.active {
+  color: rgba(35, 37, 38, 0.9);
+}
+.dot-nav ul li a.active .dot {
+  background-color: rgba(35, 37, 38, 0.9);
+  transform: scale(1.3);
+  border-radius: 50%;
+}
+.dot-nav ul li a.active .label {
+  opacity: 1;
+  visibility: visible;
+}
+.dot-nav ul:hover a .label {
+  visibility: visible;
+  opacity: 0.5;
+}
+.dot-nav ul:hover a.active .label {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
