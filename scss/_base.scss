@@ -1,12 +1,8 @@
 @use 'variables';
 
-html {
+* {
   box-sizing: border-box;
   font-size: variables.$font-size-base;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
 }
 
 body {
@@ -19,9 +15,9 @@ body {
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 50px;
   display: flex;
   align-items: center;
   justify-content: center;
