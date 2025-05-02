@@ -1,3 +1,5 @@
+@use 'variables';
+
 .dot-nav {
   position: fixed;
   top: 50%;
@@ -68,6 +70,91 @@
 
     &:hover a.active .label {
       opacity: 1;
+    }
+  }
+}
+
+.main-header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: variables.$bg-color;
+  color: white;
+  z-index: 9999;
+  padding: 5px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      .logo {
+        color: variables.$text-color-dark;
+        text-transform: uppercase;
+        font-size: 30px;
+        line-height: 38px;
+      }
+
+      .logo_subtext {
+        color: variables.$primary-color;
+      }
+    }
+
+
+    .right {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      ul {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        li {
+          margin-right: 20px;
+          a {
+            color: variables.$text-color-dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  //height: 50px;
+  background-color: variables.$text-color-dark;
+  color: white;
+  z-index: 9998;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .right {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      ul {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        li {
+          margin-right: 20px;
+          a {
+            color: variables.$text-color-light
+          }
+        }
+      }
     }
   }
 }
