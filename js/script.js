@@ -66,22 +66,22 @@ function showSeason(season) {
     hideTimeout = setTimeout(() => {
       seasonCard.classList.remove('show');
       envBox.classList.remove('show');
-    }, 4000);
+    }, 3000);
   }
 }
 
 video.addEventListener('timeupdate', () => {
   const time = video.currentTime;
-
+  console.log(time)
   const section = document.querySelector('.seasons-wrapper');
   const rect = section.getBoundingClientRect();
   const inView = rect.top < window.innerHeight && rect.bottom > 0;
 
   if (!inView) return;
 
-  if (time < 5) showSeason('Winter');
-  else if (time < 10) showSeason('Spring');
-  else if (time < 15) showSeason('Summer');
+  if (time > 0.5 && time < 4) showSeason('Winter');
+  else if (time > 4 && time < 8) showSeason('Spring');
+  else if (time > 8 && time < 12) showSeason('Summer');
 });
 
 

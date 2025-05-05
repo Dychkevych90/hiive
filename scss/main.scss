@@ -431,18 +431,19 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background-color: variables.$bg-color;
+    //background-color: variables.$bg-color;
     z-index: 2;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateX(250%);
+    //transition: transform 0.3s ease, opacity 0.3s ease;
+    //transform: translateX(250%);
 
     .top {
-      border-radius: 20px;
+      //border-radius: 20px;
       width: 100%;
       display: flex;
       align-items: center;
       flex-direction: column;
       justify-content: center;
+      transition: transform 0.3s ease, opacity 0.3s ease;
 
       .img-container {
         background-color: variables.$primary-color;
@@ -460,8 +461,8 @@
         width: 100%;
         text-align: center;
         padding: 10px 0;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        //border-bottom-left-radius: 20px;
+        //border-bottom-right-radius: 20px;
         font-size: 21px;
       }
     }
@@ -476,14 +477,16 @@
         font-size: 17px;
         line-height: 18px;
         text-align: left;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        background-color: variables.$bg-color;
     }
   }
 
-  .season-card.show {
-    opacity: 1;
-    right: 15%;
-    transform: translateX(0px);
-  }
+  //.season-card.show {
+  //  opacity: 1;
+  //  right: 15%;
+  //  transform: translateX(0px);
+  //}
 
   .env-box {
     position: absolute;
@@ -985,13 +988,58 @@
 
 
 //#season-card {
-//  opacity: 0;
-//  transform: scaleY(0);
-//  transform-origin: top;
-//  transition: transform 0.5s ease, opacity 0.5s ease;
+// .top {
+//   opacity: 0;
+//   transform: scaleY(0);
+//   transform-origin: top;
+//   transition: transform 0.5s ease, opacity 0.5s ease;
+// }
+//
+//  .bottom {
+//    opacity: 0;
+//    transform: scaleY(0);
+//    transform-origin: top;
+//    transition: transform 0.5s ease, opacity 0.5s ease;
+//  }
 //}
 //
 //#season-card.show {
-//  opacity: 1;
-//  transform: scaleY(1);
+//  .top {
+//    opacity: 1;
+//    transform: scaleY(1);
+//  }
+//
+//  .bottom {
+//    opacity: 1;
+//    transform: scaleY(1);
+//  }
 //}
+
+.season-card .top,
+.season-card .bottom {
+  overflow: hidden;
+}
+
+.season-card .top .img-container,
+.season-card .top .title,
+.season-card .bottom {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s ease;
+}
+
+/* Animate bottom from bottom */
+.season-card .bottom {
+  transform-origin: bottom;
+}
+
+/* When card is shown, unfold parts */
+.season-card.show .top .img-container,
+.season-card.show .top .title,
+.season-card.show .bottom {
+  transform: scaleY(1);
+}
+
+.section-card.show {
+  background-color: variables.$bg-color;
+}
