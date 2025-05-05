@@ -18,10 +18,17 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'UniverseLight';
+  src: url('../fonts/Univers-Light.otf') format('opentype');
+  font-weight: 300;
+  font-display: swap;
+}
+
 .main {
   position: relative;
   width: 100%;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 100px);
   overflow: hidden;
 
   video {
@@ -35,7 +42,7 @@
 
   .video-title {
     position: absolute;
-    bottom: 40px;
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -47,22 +54,24 @@
 
     h1 {
       margin-bottom: 0;
-      line-height: 70px;
-      font-size: 60px;
+      line-height: 40px;
+      font-size: 45px;
       text-transform: uppercase;
     }
 
     p {
       text-transform: uppercase;
-      font-size: 25px;
-      line-height: 34px;
-      margin:  0 0 20px;
-      color: rgba(255, 255, 255, 0.5);
+      font-size: 21px;
+      line-height: 24px;
+      margin:  0 0 10px;
+      //color: rgba(255, 255, 255, 0.5);
+      font-family: "UniverseLight", Arial;
+      font-weight: 200;
     }
 
     .buttons {
       .button:first-child {
-        margin-right: 15px;
+        margin-right: 10px;
       }
     }
   }
@@ -85,18 +94,18 @@
 
     h2 {
       background: variables.$primary-color;
-      text-align: center;
       color: #fff;
       font-weight: 700;
-      padding: 10px 0;
+      padding: 10px 30px;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       margin: 0;
+      text-align: left;
     }
 
     p {
-      padding: 15px 40px 20px;
-      text-align: center;
+      padding: 15px 30px 20px;
+      text-align: left;
       background: variables.$secondary-color;
       margin: 0;
       border-bottom-left-radius: 20px;
@@ -201,12 +210,12 @@
       background: variables.$secondary-color;
       text-align: center;
       font-weight: bold;
-      padding: 20px 0 5px;
+      padding: 20px 0 0;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       margin: 0;
       font-size: 30px;
-      line-height: 44px;
+      line-height: 38px;
     }
 
     .line {
@@ -217,15 +226,16 @@
     }
 
     p {
-      padding: 15px 25px 25px;
-      text-align: center;
+      padding: 10px 25px 25px;
+      text-align: left;
       background: variables.$secondary-color;
       margin: 0;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-      font-weight: 700;
       font-size: 16px;
       line-height: 22px;
+      font-family: "FuturaStdR", serif;
+      font-weight: 400;
     }
   }
 }
@@ -263,10 +273,11 @@
       margin: 0;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-      font-weight: 700;
       font-size: 16px;
       line-height: 24px;
       text-align: left;
+      font-family: "FuturaStdR", serif;
+      font-weight: 400;
     }
   }
 
@@ -311,11 +322,12 @@
       margin: 0;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-      font-weight: 700;
       font-size: 16px;
       line-height: 25px;
       text-align: left;
       min-height: 250px;
+      font-family: "FuturaStdR", serif;
+      font-weight: 400;
     }
   }
 }
@@ -549,25 +561,26 @@
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       margin: 0;
-      font-size: 38px;
+      font-size: 36px;
       line-height: 48px;
     }
 
     .line {
       width: 90%;
-      height: 2px;
+      height: 1px;
       background-color: #fff;
       margin: 15px auto
     }
 
     p {
-      padding: 15px 50px 40px;
-      text-align: center;
+      padding: 15px 50px 30px;
+      text-align: left;
       background: variables.$secondary-color;
       margin: 0;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-      font-weight: 700;
+      font-weight: 400;
+      font-family: "FuturaStdR", serif;
       font-size: 20px;
       line-height: 25px;
     }
@@ -576,9 +589,7 @@
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 50px;
-      margin-bottom: 35px;
+      justify-content: flex-start;
 
       .left {
         font-weight: bold;
@@ -593,24 +604,29 @@
         0px -2px 0 #fff,
         0px  2px 0 #fff;
         min-width: 160px;
-        text-align: right;
+        text-align: left;
+      }
+
+      .top {
+        font-size: 16px;
+        line-height: 20px;
+        padding-left: 50px;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-family: "FuturaStdR", serif;
+        font-weight: 400;
+        margin-right: 25px;
       }
 
       .right {
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-
-        .top {
-          font-size: 25px;
-          line-height: 20px;
-          padding-left: 30px;
-          padding-top: 0;
-        }
-
         .bottom {
-          font-size: 20px;
-          line-height: 25px
+          font-size: 16px;
+          line-height: 25px;
+          font-family: "FuturaStdR", serif;
+          font-weight: 400;
         }
       }
     }
@@ -634,6 +650,14 @@
 .section-11 {
   .section-2 {
     position: relative;
+
+    .main_block {
+      background-color: variables.$green;
+
+      .top, p {
+        background-color: variables.$green;
+      }
+    }
   }
 
   .bee {
@@ -648,7 +672,7 @@
     display: flex;
     align-items: center;
     margin-top: 35px;
-    margin-bottom: 150px;
+    margin-bottom: 30px;
 
     .block {
       flex: 50%;
@@ -658,17 +682,25 @@
 
     .block:nth-child(1) {
       background-color: variables.$primary-color;
-      margin-right: 50px;
+      margin-right: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 25px;
+      font-size: 30px;
       line-height: 37px;
-      text-align: center;
+      text-align: left;
+      padding: 0 45px;
     }
 
     .block:nth-child(2) {
-      background-color: variables.$text-color-dark
+      background-color: variables.$text-color-dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      line-height: 37px;
+      text-align: left;
+      padding: 0 45px;
     }
   }
 
@@ -950,3 +982,16 @@
     }
   }
 }
+
+
+//#season-card {
+//  opacity: 0;
+//  transform: scaleY(0);
+//  transform-origin: top;
+//  transition: transform 0.5s ease, opacity 0.5s ease;
+//}
+//
+//#season-card.show {
+//  opacity: 1;
+//  transform: scaleY(1);
+//}

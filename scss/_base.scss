@@ -14,6 +14,12 @@ body {
   line-height: variables.$line-height-base;
 }
 
+//html, body {
+//  scroll-behavior: smooth;
+//  overflow-x: hidden;
+//  overscroll-behavior: none; // optional to reduce bounce
+//}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
