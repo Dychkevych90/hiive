@@ -131,7 +131,7 @@
   </section>
 
   <section id="section2" class="section section-bg section-animate">
-    <img id="scroll-image" src="./images/heroBgCompressed.jpg" alt="image" loading="eager">
+    <img id="scroll-image" src="./images/heroBgCompressed.jpg" alt="image" loading="eager" style="height: calc(100vh - 55px); object-fit: cover;">
     <div class="container" style="padding: 0">
       <div class="section-2 animated-text">
         <h3>Tree Hollow as Standard</h3>
@@ -344,6 +344,56 @@
         <div class="text">HIIVE REPLICATING THE CONDITIONS OF <br/>A AROUND 300-YEAR-OLD TREE CAVITY</div>
       </div>
     </div>
+  </section>
+
+  <section class="section section-bg section-animate-test">
+    <img id="scroll-test" src="./images/HIIVE-WINTER.jpg" alt="image" loading="eager" style="height: calc(100vh - 55px); object-fit: cover;">
+
+    <div class="unfold-block">
+      <div class="top">
+        <div class="img-container">
+          <img src="./images/icons/snowflake.svg" alt="img">
+        </div>
+        <div class="title">Thermo-Hanf<br/>
+          0,043 W/(m·K)</div>
+      </div>
+      <div class="bottom">
+        The stable insulation
+        performance of
+        thermo-hemp, combined with
+        a moisture-regulating barrier,
+        ensures the insulation
+        remains stable year-round.
+        This makes it possible to
+        replicate a tree cavity, like
+        the one found in a
+        300-year-old oak tree.
+      </div>
+    </div>
+
+    <div class="unfold-block" style="right: 0; left: 15%;">
+      <div class="top">
+        <div class="img-container">
+          <img src="./images/icons/snowflake.svg" alt="img">
+        </div>
+        <div class="title">Oak wood in winter<br/>
+          0.2 - 0.3 W/(m·K)</div>
+      </div>
+      <div class="bottom">
+        In a living tree, moisture
+        transport through the xylem
+        vessels ensures constant
+        insulation performance in winter
+        as they transport moisture away.
+        In HIIVE, this effect is achieved
+        through a moisture-regulating
+        barrier that enables controlled
+        moisture transport, ensuring
+        stable insulation.
+      </div>
+    </div>
+
+    <div class="gradient-block-test"></div>
   </section>
 
   <div class="video-block seasons-wrapper">
@@ -643,19 +693,79 @@
   gsap.registerPlugin(ScrollTrigger);
 
   /* Hero block animated */
-  gsap.to("#scroll-image",{
+  // Create a timeline to sync the animations
+  const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-animate",
-      start: "top top",
-      end: "+=100%", // keep it pinned for 100% of viewport height scroll
+      start: "top top",    // Start when the section hits the top of the viewport
+      end: "+=100%",       // Keep the section pinned for 100% of the viewport height
       pin: true,
-      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-    },
+      scrub: 1,            // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    }
+  });
+
+  // Image animation: Increase width to 100%
+  tl.to("#scroll-image", {
     width: "100%",
     y: 0,
     ease: "power2.out",
+    duration: 3,
   });
 
+  // Text animation: Fade in and move up after the image completes
+  tl.from(".animated-text", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power2.out",
+  }, "-=0.2"); // Starts this animation a bit before the image animation ends (optional)
+
+  tl.fromTo(".gradient-block",
+    { opacity: 0, y: 50 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".section-animate",
+        start: "top top", // Start the gradient animation after the image is fully visible
+        end: "+=100%", // Keep it within the same scroll range as the image and text
+        scrub: true,
+      }
+    }
+  );
+
+  //2
+  // gsap.to("#scroll-image",{
+  //   scrollTrigger: {
+  //     trigger: ".section-animate",
+  //     start: "top top",
+  //     end: "+=100%", // keep it pinned for 100% of viewport height scroll
+  //     pin: true,
+  //     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+  //   },
+  //   width: "100%",
+  //   y: 0,
+  //   ease: "power2.out",
+  // });
+  //
+  // gsap.from(".animated-text", {
+  //   scrollTrigger: {
+  //     trigger: ".animated-text",
+  //     start: "top 80%",
+  //     toggleActions: "play none none reset",
+  //     //markers: false,
+  //   },
+  //   opacity: 0,
+  //   y: 50,
+  //   duration: 1,
+  //   delay: 1,
+  //   ease: "power2.out"
+  // });
+
+
+  //1
   // gsap.to("#scroll-image",{
   //   scrollTrigger: {
   //     trigger: ".section-animate",
@@ -667,20 +777,7 @@
   //   y: 0,
   //   ease: "power2.out",
   // });
-
-  gsap.from(".animated-text", {
-    scrollTrigger: {
-      trigger: ".animated-text",
-      start: "top 80%",
-      toggleActions: "play none none reset",
-      //markers: false,
-    },
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    ease: "power2.out"
-  });
-
+//1
   // gsap.fromTo(".gradient-block",
   //   { opacity: 0, y: 50 },
   //   {
@@ -696,20 +793,22 @@
   //   }
   // );
 
-  gsap.fromTo(".gradient-block",
-    { opacity: 0, y: 50 },
-    {
-      scrollTrigger: {
-        trigger: ".animated-text",
-        start: "top 80%",
-        end: "top 60%",
-        scrub: true,
-      },
-      opacity: 1,
-      y: 0,
-      ease: "power2.out",
-    }
-  );
+
+  //2
+  // gsap.fromTo(".gradient-block",
+  //   { opacity: 0, y: 50 },
+  //   {
+  //     scrollTrigger: {
+  //       trigger: ".animated-text",
+  //       start: "top 40%",
+  //       //end: "top 60%",
+  //       scrub: true,
+  //     },
+  //     opacity: 1,
+  //     y: 0,
+  //     ease: "power2.out",
+  //   }
+  // );
 
   /* Bees block animated */
   gsap.to("#scroll-image-bee",{
@@ -833,6 +932,46 @@
       ease: "power2.out",
     }
   );
+
+  // teststtdatsdsad
+
+  // GSAP Timeline for Image animation
+  const tl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section-animate-test",  // Trigger the animation based on the section
+      start: "top top",             // Start when the section hits the top of the viewport
+      end: "+=100%",                // End when the section is pinned for the entire viewport height
+      pin: true,                    // Pin the section during the animation
+      scrub: 1,                     // Smooth scrubbing
+    }
+  });
+
+  // Image animation: Increase width to 100%
+  tl2.to("#scroll-test", {
+    width: "100%",                  // Set the width to 100%
+    y: 0,
+    ease: "power2.out",
+    duration: 3,                    // Duration of the image width animation
+  });
+
+  // Animation for unfolding the block when the image is full width
+  gsap.fromTo(".unfold-block",
+    { height: 0, opacity: 0 },   // Initial state: collapsed block (height 0 and invisible)
+    {
+      height: "auto",             // Unfold the block to its natural height
+      opacity: 1,                 // Make the block visible
+      duration: 1,                // Duration for unfolding
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#scroll-test",   // Trigger based on image animation progress
+        start: "top+=30%",            // When the image reaches the top
+        end: "bottom+=60%",           // When the image reaches full width
+        scrub: true,                 // Smooth scrubbing (the unfolding follows the scroll)
+        toggleActions: "play none none reverse", // Reverse the unfolding when scrolling back
+      }
+    }
+  );
+
 
 </script>
 

@@ -124,6 +124,68 @@
   }
 }
 
+.unfold-block {
+  position: absolute;
+  top: 150px;
+  right: 15%;
+  max-width: 300px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  //background-color: variables.$bg-color;
+  z-index: 2;
+  //transition: transform 0.3s ease, opacity 0.3s ease;
+  //transform: translateX(250%);
+
+  .top {
+    //border-radius: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    .img-container {
+      background-color: variables.$primary-color;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      min-height: 150px;
+    }
+
+    .title {
+      background-color: variables.$secondary-color;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      //border-bottom-left-radius: 20px;
+      //border-bottom-right-radius: 20px;
+      font-size: 21px;
+    }
+  }
+
+  .bottom {
+    padding: 20px 30px 40px;
+    color: variables.$text-color-dark;
+    margin: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 18px;
+    text-align: left;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    background-color: variables.$bg-color;
+  }
+}
+
 .section-bg {
   background: linear-gradient(0deg, #FEF9ED 0.9%, rgba(254, 249, 237, 0.890711) 12.9%, rgba(254, 249, 237, 0.789167) 16.44%, rgba(205, 249, 237, 0.500978) 27.79%, rgba(254, 249, 237, 0.231221) 36.56%, rgba(254, 249, 237, 0) 41%);
   height: 100vh;
@@ -135,6 +197,7 @@
 
   .gradient-block,
   .gradient-block-bee,
+  .gradient-block-test,
   .gradient-block-tree,
   .gradient-block-behandeln {
     position: absolute;
@@ -157,6 +220,7 @@
   }
 
   #scroll-image,
+  #scroll-test,
   #scroll-image-bee,
   #scroll-image-tree,
   #scroll-image-behandeln {
