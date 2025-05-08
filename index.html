@@ -352,7 +352,7 @@
     <div class="unfold-block">
       <div class="top">
         <div class="img-container">
-          <img src="./images/icons/snowflake.svg" alt="img">
+          <img src="./images/icons/7.png" alt="img">
         </div>
         <div class="title">Thermo-Hanf<br/>
           0,043 W/(m·K)</div>
@@ -374,7 +374,7 @@
     <div class="unfold-block" style="right: 0; left: 15%;">
       <div class="top">
         <div class="img-container">
-          <img src="./images/icons/snowflake.svg" alt="img">
+          <img src="./images/icons/8.png" alt="img">
         </div>
         <div class="title">Oak wood in winter<br/>
           0.2 - 0.3 W/(m·K)</div>
@@ -712,29 +712,22 @@
     duration: 3,
   });
 
+  tl.to({}, { duration: 1 });
+
   // Text animation: Fade in and move up after the image completes
   tl.from(".animated-text", {
     opacity: 0,
     y: 50,
-    duration: 1,
+    duration: 2,
     ease: "power2.out",
-  }, "-=0.2"); // Starts this animation a bit before the image animation ends (optional)
+  }); // Starts this animation a bit before the image animation ends (optional)
 
-  tl.fromTo(".gradient-block",
-    { opacity: 0, y: 50 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".section-animate",
-        start: "top top", // Start the gradient animation after the image is fully visible
-        end: "+=100%", // Keep it within the same scroll range as the image and text
-        scrub: true,
-      }
-    }
-  );
+  tl.from(".gradient-block", {
+    opacity: 0,
+    y: 50,
+    duration: 2,
+    ease: "power2.out",
+  });
 
   //2
   // gsap.to("#scroll-image",{
