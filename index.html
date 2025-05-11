@@ -396,33 +396,70 @@
     <div class="gradient-block-test"></div>
   </section>
 
-  <div class="video-block seasons-wrapper">
-    <video id="season-video" autoplay muted loop>
-      <source src="./images/video/new_seasons.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+<!--  <div class="video-block seasons-wrapper">-->
+<!--    <video id="season-video" autoplay muted loop>-->
+<!--      <source src="./images/video/new_seasons.mp4" type="video/mp4">-->
+<!--      Your browser does not support the video tag.-->
+<!--    </video>-->
+
+<!--    <div id="season-card" class="season-card" >-->
+<!--      <div class="top">-->
+<!--        <div class="img-container">-->
+<!--          <img src="./images/icons/snowflake.svg" alt="img">-->
+<!--        </div>-->
+<!--        <div class="title">THE WINTER CLUSTER</div>-->
+<!--      </div>-->
+<!--      <div class="bottom">-->
+<!--        In the tree cavity-like-->
+<!--        geometry, a narrow-->
+<!--        cylinder, the bee colony can-->
+<!--        position itself in the center-->
+<!--        during winter, separating-->
+<!--        the cold air at the bottom-->
+<!--        from the warmer air above.-->
+<!--        This allows air exchange to-->
+<!--        occur slowly and controlled,-->
+<!--        helping the bees save a lot-->
+<!--        of energy during the winter-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="env-box">-->
+<!--      <div class="env-label">ENVIRONMENT</div>-->
+<!--      <div class="env-data">-->
+<!--        <div class="env-item">0°C / 32°F</div>-->
+<!--        <div class="env-item">RH 83 %</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <!-- Season 1: Winter -->
+  <section class="video-block seasons-wrapper" id="season-1">
+    <video class="season-video" autoplay muted loop>
+      <source src="./images/video/winter.mp4" type="video/mp4" />
     </video>
 
     <div id="season-card" class="season-card" >
-      <div class="top">
-        <div class="img-container">
-          <img src="./images/icons/snowflake.svg" alt="img">
+          <div class="top">
+            <div class="img-container">
+              <img src="./images/icons/snowflake.svg" alt="img">
+            </div>
+            <div class="title">THE WINTER CLUSTER</div>
+          </div>
+          <div class="bottom">
+            In the tree cavity-like
+            geometry, a narrow
+            cylinder, the bee colony can
+            position itself in the center
+            during winter, separating
+            the cold air at the bottom
+            from the warmer air above.
+            This allows air exchange to
+            occur slowly and controlled,
+            helping the bees save a lot
+            of energy during the winter
+          </div>
         </div>
-        <div class="title">THE WINTER CLUSTER</div>
-      </div>
-      <div class="bottom">
-        In the tree cavity-like
-        geometry, a narrow
-        cylinder, the bee colony can
-        position itself in the center
-        during winter, separating
-        the cold air at the bottom
-        from the warmer air above.
-        This allows air exchange to
-        occur slowly and controlled,
-        helping the bees save a lot
-        of energy during the winter
-      </div>
-    </div>
 
     <div class="env-box">
       <div class="env-label">ENVIRONMENT</div>
@@ -431,7 +468,88 @@
         <div class="env-item">RH 83 %</div>
       </div>
     </div>
-  </div>
+
+    <div class="white-transition"></div>
+  </section>
+
+  <!-- Season 2: Spring -->
+  <section class="video-block seasons-wrapper" id="season-2">
+    <video class="season-video" autoplay muted loop>
+      <source src="./images/video/spring.mp4" type="video/mp4" />
+    </video>
+
+    <div class="season-card" >
+      <div class="top">
+        <div class="img-container">
+          <img src="./images/icons/sping.svg" alt="img">
+        </div>
+        <div class="title">EARLY BROOD</div>
+      </div>
+      <div class="bottom">
+        In spring, when the first
+        bulb flowers bloom, the
+        bees enter brood and
+        require 30°C in the brood
+        nest. They position their
+        mass in a way that seals the
+        entire cylinder, allowing
+        them to effectively retain
+        warm air despite nighttime
+        freezing temperatures and
+        cool days.
+      </div>
+    </div>
+
+    <div class="env-box">
+      <div class="env-label">ENVIRONMENT</div>
+      <div class="env-data">
+        <div class="env-item">10°C / 50°F</div>
+        <div class="env-item">RH 83 %</div>
+      </div>
+    </div>
+
+    <div class="white-transition"></div>
+  </section>
+
+  <!-- Season 3: Summer -->
+  <section class="video-block seasons-wrapper" id="season-3">
+    <video class="season-video" autoplay muted loop>
+      <source src="./images/video/summer.mp4" type="video/mp4" />
+    </video>
+
+    <div class="season-card" >
+      <div class="top">
+        <div class="img-container">
+          <img src="./images/icons/summer.svg" alt="img">
+        </div>
+        <div class="title">COOLING</div>
+      </div>
+      <div class="bottom">
+        Optimal Cooling through
+        Shape and Design
+        Wilbau’s cylindrical shape
+        helps bees distribute air
+        evenly and vent efficiently.
+        The thick insulation not
+        only keeps out the cold in
+        winter – it also blocks heat
+        in summer, like a thermos
+        keeps drinks cool on hot
+        days.
+      </div>
+    </div>
+
+    <div class="env-box">
+      <div class="env-label">ENVIRONMENT</div>
+      <div class="env-data">
+        <div class="env-item">35°C / 95°F</div>
+        <div class="env-item">RH 45 %</div>
+      </div>
+    </div>
+
+    <div class="white-transition"></div>
+  </section>
+
 
   <section id="section11" class="section section-11">
     <div class="container">
@@ -693,7 +811,7 @@
   gsap.registerPlugin(ScrollTrigger);
 
   /* Hero block animated */
-  // Create a timeline to sync the animations
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-animate",
@@ -704,7 +822,6 @@
     }
   });
 
-  // Image animation: Increase width to 100%
   tl.to("#scroll-image", {
     width: "100%",
     y: 0,
@@ -712,17 +829,16 @@
     duration: 3,
   });
 
-  tl.to({}, { duration: 1 });
+  tl.to({}, { duration: 2 });
 
-  // Text animation: Fade in and move up after the image completes
-  tl.from(".animated-text", {
+  tl.from(".gradient-block", {
     opacity: 0,
     y: 50,
     duration: 2,
     ease: "power2.out",
-  }); // Starts this animation a bit before the image animation ends (optional)
+  });
 
-  tl.from(".gradient-block", {
+  tl.from(".animated-text", {
     opacity: 0,
     y: 50,
     duration: 2,
@@ -928,43 +1044,186 @@
 
   // teststtdatsdsad
 
-  // GSAP Timeline for Image animation
+  // // GSAP Timeline for Image animation
+  // const tl2 = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: ".section-animate-test",  // Trigger the animation based on the section
+  //     start: "top top",             // Start when the section hits the top of the viewport
+  //     end: "+=100%",                // End when the section is pinned for the entire viewport height
+  //     pin: true,                    // Pin the section during the animation
+  //     scrub: 1,                     // Smooth scrubbing
+  //   }
+  // });
+  //
+  // // Image animation: Increase width to 100%
+  // tl2.to("#scroll-test", {
+  //   width: "100%",                  // Set the width to 100%
+  //   y: 0,
+  //   ease: "power2.out",
+  //   duration: 3,                    // Duration of the image width animation
+  // });
+  //
+  // // Animation for unfolding the block when the image is full width
+  // gsap.fromTo(".unfold-block",
+  //   { height: 0, opacity: 0 },   // Initial state: collapsed block (height 0 and invisible)
+  //   {
+  //     height: "auto",             // Unfold the block to its natural height
+  //     opacity: 1,                 // Make the block visible
+  //     duration: 1,                // Duration for unfolding
+  //     ease: "power2.out",
+  //     scrollTrigger: {
+  //       trigger: "#scroll-test",   // Trigger based on image animation progress
+  //       start: "top+=30%",            // When the image reaches the top
+  //       end: "bottom+=60%",           // When the image reaches full width
+  //       scrub: true,                 // Smooth scrubbing (the unfolding follows the scroll)
+  //       toggleActions: "play none none reverse", // Reverse the unfolding when scrolling back
+  //     }
+  //   }
+  // );
+
+  // Timeline for the entire scroll section
   const tl2 = gsap.timeline({
     scrollTrigger: {
-      trigger: ".section-animate-test",  // Trigger the animation based on the section
-      start: "top top",             // Start when the section hits the top of the viewport
-      end: "+=100%",                // End when the section is pinned for the entire viewport height
-      pin: true,                    // Pin the section during the animation
-      scrub: 1,                     // Smooth scrubbing
+      trigger: ".section-animate-test",
+      start: "top top",
+      end: "+=200%",         // Extend scroll duration
+      pin: true,
+      scrub: 1,
     }
   });
 
-  // Image animation: Increase width to 100%
+  // Step 1: Expand image
   tl2.to("#scroll-test", {
-    width: "100%",                  // Set the width to 100%
-    y: 0,
+    width: "100%",
     ease: "power2.out",
-    duration: 3,                    // Duration of the image width animation
+    duration: 2,
   });
 
-  // Animation for unfolding the block when the image is full width
-  gsap.fromTo(".unfold-block",
-    { height: 0, opacity: 0 },   // Initial state: collapsed block (height 0 and invisible)
-    {
-      height: "auto",             // Unfold the block to its natural height
-      opacity: 1,                 // Make the block visible
-      duration: 1,                // Duration for unfolding
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#scroll-test",   // Trigger based on image animation progress
-        start: "top+=30%",            // When the image reaches the top
-        end: "bottom+=60%",           // When the image reaches full width
-        scrub: true,                 // Smooth scrubbing (the unfolding follows the scroll)
-        toggleActions: "play none none reverse", // Reverse the unfolding when scrolling back
-      }
-    }
-  );
+  // Step 2: Fade in unfold-blocks
+  tl2.from(".unfold-block", {
+    opacity: 0,
+    y: 30,
+    ease: "power2.out",
+    duration: 5,     // Make this much longer (slow transition)
+  }, "+=0.5");     // small pause after image expands
 
+  // Step 3: Fade in bottom gradient
+  tl2.from(".gradient-block-test", {
+    opacity: 0,
+    ease: "power2.out",
+    duration: 3,
+  }, "+=0.5"); // show gradient a bit after blocks are visible
+
+
+// ________ seasons video block
+
+  // Winter Scene
+  const tl5 = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#season-1",
+      start: "top top",
+      end: "+=300%",
+      scrub: true,
+      pin: true,
+    }
+  });
+
+  tl5.to({}, { duration: 2 });
+
+  tl5.to("#season-1 .season-card", {
+    opacity: 1,
+    y: 0,
+    duration: 4,
+    ease: "power2.out",
+  }, "50%");
+
+  tl5.to("#season-1 .env-box", {
+    opacity: 1,
+    y: 0,
+    duration: 4,
+    ease: "power2.out",
+  }, "50%");
+
+  tl5.to("#season-1 .white-transition", {
+    opacity: 1,
+    duration: 2,
+    ease: "power1.inOut"
+  }, "80%");
+
+  // Spring Scene
+  const tl6 = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#season-2",
+      start: "top top",
+      end: "+=300%",
+      scrub: true,
+      pin: true,
+    }
+  });
+
+  tl6.fromTo("#season-2 .white-transition", {
+    opacity: 1,
+  }, {
+    opacity: 0,
+    duration: 2,
+    ease: "power1.out"
+  }, "10%");
+
+  tl6.to({}, { duration: 2 });
+
+  tl6.to("#season-2 .season-card", {
+    opacity: 1,
+    y: 0,
+    duration: 4,
+    ease: "power2.out",
+  }, "50%");
+
+  tl6.to("#season-2 .env-box", {
+    opacity: 1,
+    y: 0,
+    duration: 4,
+    ease: "power2.out",
+  }, "50%");
+
+  tl6.to("#season-2 .white-transition", {
+    opacity: 1,
+    duration:2,
+  }, "80%");
+
+  // Summer Scene
+  const tl7 = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#season-3",
+      start: "top top",
+      end: "+=300%",
+      scrub: true,
+      pin: true,
+    }
+  });
+
+  tl7.fromTo("#season-3 .white-transition", {
+    opacity: 1,
+  }, {
+    opacity: 0,
+    duration: 2,
+    ease: "power1.out"
+  }, "10%");
+
+  tl7.to({}, { duration: 2 });
+
+  tl7.to("#season-3 .season-card", {
+    opacity: 1,
+    y: 0,
+    duration: 4,
+    ease: "power2.out",
+  }, "50%");
+
+  tl7.to("#season-3 .env-box", {
+    opacity: 1,
+    y: 0,
+    duration: 4,
+    ease: "power2.out",
+  }, "50%");
 
 </script>
 
