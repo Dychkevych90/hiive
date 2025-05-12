@@ -127,7 +127,7 @@
 .unfold-block {
   position: absolute;
   top: 100px;
-  right: 15%;
+  right: 10%;
   max-width: 300px;
   border-radius: 20px;
   display: flex;
@@ -140,11 +140,13 @@
   //transition: transform 0.3s ease, opacity 0.3s ease;
   //transform: translateX(250%);
 
-  transform: scaleY(1);
-  transform-origin: top center;
+  //transform: scaleY(1);
+  //transform-origin: top center;
   opacity: 1;
-  transition: none; // gsap handles transition
+  //transition: none; // gsap handles transition
+
   overflow: hidden; // prevents overflow during animation
+  transition: opacity 1s ease, transform 1s ease;
 
   .top {
     //border-radius: 20px;
@@ -247,7 +249,6 @@
     transform: translateY(0);
     transition: transform 0.3s ease;
     position: absolute;
-    //min-height: 100vh;
     bottom: 0;
     will-change: transform, width;
   }
@@ -505,7 +506,7 @@
 
   .season-card {
     position: absolute;
-    top: 150px;
+    top: 100px;
     right: 10%;
     max-width: 300px;
     border-radius: 20px;
@@ -514,10 +515,7 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    //background-color: variables.$bg-color;
     z-index: 2;
-    //transition: transform 0.3s ease, opacity 0.3s ease;
-    //transform: translateX(250%);
 
     .top {
       //border-radius: 20px;
@@ -565,17 +563,11 @@
     }
   }
 
-  //.season-card.show {
-  //  opacity: 1;
-  //  right: 15%;
-  //  transform: translateX(0px);
-  //}
-
   .env-box {
     position: absolute;
     display: inline-block;
     top: 150px;
-    left: 25%;
+    left: 20%;
     background-color: #fff;
     border: 2px solid #ccc;
     padding: 4px;
@@ -1071,64 +1063,6 @@
   }
 }
 
-
-//#season-card {
-// .top {
-//   opacity: 0;
-//   transform: scaleY(0);
-//   transform-origin: top;
-//   transition: transform 0.5s ease, opacity 0.5s ease;
-// }
-//
-//  .bottom {
-//    opacity: 0;
-//    transform: scaleY(0);
-//    transform-origin: top;
-//    transition: transform 0.5s ease, opacity 0.5s ease;
-//  }
-//}
-//
-//#season-card.show {
-//  .top {
-//    opacity: 1;
-//    transform: scaleY(1);
-//  }
-//
-//  .bottom {
-//    opacity: 1;
-//    transform: scaleY(1);
-//  }
-//}
-
-//.season-card .top,
-//.season-card .bottom {
-//  overflow: hidden;
-//}
-//
-//.season-card .top .img-container,
-//.season-card .top .title,
-//.season-card .bottom {
-//  transform: scaleY(0);
-//  transform-origin: top;
-//  transition: transform 0.5s ease;
-//}
-//
-///* Animate bottom from bottom */
-//.season-card .bottom {
-//  transform-origin: bottom;
-//}
-//
-///* When card is shown, unfold parts */
-//.season-card.show .top .img-container,
-//.season-card.show .top .title,
-//.season-card.show .bottom {
-//  transform: scaleY(1);
-//}
-//
-//.section-card.show {
-//  background-color: variables.$bg-color;
-//}
-
 .video-block {
   position: relative;
   height: 100vh;
@@ -1146,7 +1080,7 @@
 }
 
 .season-card {
-  top: 150px;
+  top: 100px;
   right: 10%;
   max-width: 300px;
   border-radius: 20px;
@@ -1158,10 +1092,8 @@
   margin: 0 auto;
   z-index: 2;
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s, transform 0.5s;
-  //color: black;
-  //background: rgba(255, 255, 255, 0.9);
+  //transform: translateX(-50%) translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .white-transition {
@@ -1177,7 +1109,24 @@
 .video-block-wrapper {
   position: relative;
   height: 100vh;
-  overflow: hidden;
+  //overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //height: calc(100vh - 55px) !important;
+  //margin-top: -55px;
+
+  #video-winter {
+    width: 60%;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    will-change: transform, width;
+    margin:  0 auto;
+    height: 100%;
+    //object-position: bottom;
+  }
 }
 
 .season-video {
@@ -1196,15 +1145,5 @@
   opacity: 1;
 }
 
-.season-card {
-  position: absolute;
-  top: 150px;
-  transform: translateX(-50%) translateY(50px);
-  opacity: 0;
-  z-index: 1;
-  max-width: 300px;
-  width: 100%;
-  transition: opacity 1s ease, transform 1s ease;
-}
 
 
