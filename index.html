@@ -297,7 +297,7 @@
   </section>
 
   <section id="section8" class="section section-bg section-animate-bee">
-    <img id="scroll-image-bee" src="./images/1.jpg" alt="image">
+    <img id="scroll-image-bee" src="./images/1.jpg" alt="image" style="height: calc(100vh - 55px); object-fit: cover;">
     <div class="container">
       <div class="section-2 animated-text-bee">
         <h3>Species-appropriate</h3>
@@ -549,7 +549,6 @@
 
     <div class="white-transition"></div>
   </section>
-
 
   <section id="section11" class="section section-11">
     <div class="container">
@@ -920,45 +919,77 @@
   // );
 
   /* Bees block animated */
-  gsap.to("#scroll-image-bee",{
+  const tlBee = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-animate-bee",
-      start: "top center",   // when section2 top hits center of screen
-      end: "bottom center",  // when section2 bottom hits center
-      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-    },
+      start: "top top",    // Start when the section hits the top of the viewport
+      end: "+=100%",       // Keep the section pinned for 100% of the viewport height
+      pin: true,
+      scrub: 1,            // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    }
+  });
+
+  tlBee.to("#scroll-image-bee", {
     width: "100%",
     y: 0,
     ease: "power2.out",
+    duration: 3,
   });
 
-  gsap.from(".animated-text-bee", {
-    scrollTrigger: {
-      trigger: ".animated-text-bee",
-      start: "top 80%",
-      toggleActions: "play none none reset",
-      markers: false,
-    },
+  tlBee.to({}, { duration: 2 });
+
+  tlBee.from(".gradient-block-bee", {
     opacity: 0,
     y: 50,
-    duration: 1,
-    ease: "power2.out"
+    duration: 2,
+    ease: "power2.out",
   });
 
-  gsap.fromTo(".gradient-block-bee",
-    { opacity: 0, y: 50 },
-    {
-      scrollTrigger: {
-        trigger: ".animated-text-bee",
-        start: "bottom bottom",
-        toggleActions: "play none none none",
-      },
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power2.out",
-    }
-  );
+  tlBee.from(".animated-text-bee", {
+    opacity: 0,
+    y: 50,
+    duration: 2,
+    ease: "power2.out",
+  });
+  // gsap.to("#scroll-image-bee",{
+  //   scrollTrigger: {
+  //     trigger: ".section-animate-bee",
+  //     start: "top center",   // when section2 top hits center of screen
+  //     end: "bottom center",  // when section2 bottom hits center
+  //     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+  //   },
+  //   width: "100%",
+  //   y: 0,
+  //   ease: "power2.out",
+  // });
+  //
+  // gsap.from(".animated-text-bee", {
+  //   scrollTrigger: {
+  //     trigger: ".animated-text-bee",
+  //     start: "top 80%",
+  //     toggleActions: "play none none reset",
+  //     markers: false,
+  //   },
+  //   opacity: 0,
+  //   y: 50,
+  //   duration: 1,
+  //   ease: "power2.out"
+  // });
+  //
+  // gsap.fromTo(".gradient-block-bee",
+  //   { opacity: 0, y: 50 },
+  //   {
+  //     scrollTrigger: {
+  //       trigger: ".animated-text-bee",
+  //       start: "bottom bottom",
+  //       toggleActions: "play none none none",
+  //     },
+  //     opacity: 1,
+  //     y: 0,
+  //     duration: 1,
+  //     ease: "power2.out",
+  //   }
+  // );
 
   /* Tree block animated */
   gsap.to("#scroll-image-tree",{
