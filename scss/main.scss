@@ -166,27 +166,33 @@
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       min-height: 150px;
+      max-height: 150px;
+      padding: 30px;
+
+      img {
+        max-width: 160px;
+      }
     }
 
     .title {
       background-color: variables.$secondary-color;
       width: 100%;
       text-align: center;
-      padding: 10px 0;
+      padding: 5px 0;
       //border-bottom-left-radius: 20px;
       //border-bottom-right-radius: 20px;
-      font-size: 21px;
+      font-size: 20px;
     }
   }
 
   .bottom {
-    padding: 20px 30px 40px;
+    padding: 15px 20px;
     color: variables.$text-color-dark;
     margin: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     font-weight: 700;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 18px;
     text-align: left;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -535,27 +541,33 @@
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         min-height: 150px;
+        max-height: 150px;
+        padding: 30px;
+
+        img {
+          max-width: 160px;
+        }
       }
 
       .title {
         background-color: variables.$secondary-color;
         width: 100%;
         text-align: center;
-        padding: 10px 0;
+        padding: 5px 0;
         //border-bottom-left-radius: 20px;
         //border-bottom-right-radius: 20px;
-        font-size: 21px;
+        font-size: 20px;
       }
     }
 
     .bottom {
-        padding: 20px 30px 40px;
+        padding: 15px 20px;
         color: variables.$text-color-dark;
         margin: 0;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         font-weight: 700;
-        font-size: 17px;
+        font-size: 15px;
         line-height: 18px;
         text-align: left;
         transition: transform 0.3s ease, opacity 0.3s ease;
@@ -1109,7 +1121,7 @@
 .video-block-wrapper {
   position: relative;
   height: 100vh;
-  //overflow: hidden;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1117,7 +1129,7 @@
   //margin-top: -55px;
 
   #video-winter {
-    width: 60%;
+    //width: 60%;
     transform: translateY(0);
     transition: transform 0.3s ease;
     position: absolute;
@@ -1125,7 +1137,8 @@
     will-change: transform, width;
     margin:  0 auto;
     height: 100%;
-    //object-position: bottom;
+    object-position: bottom;
+    margin-top: 50px;
   }
 }
 
@@ -1138,10 +1151,14 @@
   opacity: 0;
   transition: opacity 1.5s ease;
   z-index: 0;
-  //object-position: bottom;
+  object-position: bottom;
+  margin-top: 50px;
+
 }
 
 #video-winter {
+  transform-origin: center center;
+  will-change: transform;
   opacity: 1;
 }
 

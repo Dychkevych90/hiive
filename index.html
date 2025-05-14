@@ -1421,10 +1421,9 @@
     }
   });
 
-  // Expand video
   tl0.fromTo("#video-winter",
-    { width: "60%", y: 100 },
-    { width: "100%", y: 0, ease: "power2.out", duration: 4 },
+    { scale: 0.7, y: 100 },
+    { scale: 1, y: 0, ease: "power2.out", duration: 2 },
     0
   );
 
@@ -1442,7 +1441,7 @@
   );
 
   // Wait before starting SPRING
-  tl0.addLabel("step1", "+=3"); // <-- adds pause after winter fully in
+  tl0.addLabel("step1", "+=1.5");
 
   // === SPRING in ===
   tl0.to("#video-spring", { opacity: 1, duration: 2 }, "step1");
@@ -1452,17 +1451,17 @@
   tl0.fromTo("#card-spring",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step1+=2" // spring appears AFTER winter fades out
+    "step1+=1"
   );
 
   tl0.fromTo("#env-spring",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step1+=2"
+    "step1+=1"
   );
 
   // Wait before SUMMER
-  tl0.addLabel("step2", "step1+=6"); // <-- longer visible spring
+  tl0.addLabel("step2", "step1+=3");
 
   // === SUMMER in ===
   tl0.to("#video-spring", { opacity: 0, duration: 2 }, "step2");
@@ -1473,17 +1472,17 @@
   tl0.fromTo("#card-summer",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step2+=2"
+    "step2+=1"
   );
 
   tl0.fromTo("#env-summer",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step2+=2"
+    "step2+=1"
   );
 
   // Wait before END
-  tl0.addLabel("step3", "step2+=6"); // <-- longer visible summer
+  tl0.addLabel("step3", "step2+=3");
 
   // === END in ===
   tl0.to("#video-summer", { opacity: 0, duration: 2 }, "step3");
