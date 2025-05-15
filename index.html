@@ -654,7 +654,7 @@
       </div>
     </div>
 
-    <div class="unfold-block" id="env-winter" style="right: unset; left: 10% ">
+    <div class="unfold-block" id="env-winter" style="right: unset; left: 20% ">
       <div class="top">
         <div class="img-container">
           <img src="./images/icons/7.png" alt="img">
@@ -970,12 +970,18 @@
     }
   });
 
-  tl.to("#scroll-image", {
-    width: "100%",
-    y: 0,
-    ease: "power2.out",
-    duration: 3,
-  });
+  tl.fromTo("#scroll-image",
+    { scale: 0.7, y: 100 },
+    { scale: 1, y: 0, ease: "power2.out", duration: 2 },
+    0
+  );
+
+  // tl.to("#scroll-image", {
+  //   width: "100%",
+  //   y: 0,
+  //   ease: "power2.out",
+  //   duration: 3,
+  // });
 
   tl.to({}, { duration: 2 });
 
@@ -993,80 +999,6 @@
     ease: "power2.out",
   });
 
-  //2
-  // gsap.to("#scroll-image",{
-  //   scrollTrigger: {
-  //     trigger: ".section-animate",
-  //     start: "top top",
-  //     end: "+=100%", // keep it pinned for 100% of viewport height scroll
-  //     pin: true,
-  //     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-  //   },
-  //   width: "100%",
-  //   y: 0,
-  //   ease: "power2.out",
-  // });
-  //
-  // gsap.from(".animated-text", {
-  //   scrollTrigger: {
-  //     trigger: ".animated-text",
-  //     start: "top 80%",
-  //     toggleActions: "play none none reset",
-  //     //markers: false,
-  //   },
-  //   opacity: 0,
-  //   y: 50,
-  //   duration: 1,
-  //   delay: 1,
-  //   ease: "power2.out"
-  // });
-
-
-  //1
-  // gsap.to("#scroll-image",{
-  //   scrollTrigger: {
-  //     trigger: ".section-animate",
-  //     start: "top center",   // when section2 top hits center of screen
-  //     end: "bottom center",  // when section2 bottom hits center
-  //     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-  //   },
-  //   width: "100%",
-  //   y: 0,
-  //   ease: "power2.out",
-  // });
-//1
-  // gsap.fromTo(".gradient-block",
-  //   { opacity: 0, y: 50 },
-  //   {
-  //     scrollTrigger: {
-  //       trigger: ".animated-text",
-  //       start: "bottom bottom",
-  //       toggleActions: "play none none none",
-  //     },
-  //     opacity: 1,
-  //     y: 0,
-  //     duration: 1,
-  //     ease: "power2.out",
-  //   }
-  // );
-
-
-  //2
-  // gsap.fromTo(".gradient-block",
-  //   { opacity: 0, y: 50 },
-  //   {
-  //     scrollTrigger: {
-  //       trigger: ".animated-text",
-  //       start: "top 40%",
-  //       //end: "top 60%",
-  //       scrub: true,
-  //     },
-  //     opacity: 1,
-  //     y: 0,
-  //     ease: "power2.out",
-  //   }
-  // );
-
   /* Bees block animated */
   const tlBee = gsap.timeline({
     scrollTrigger: {
@@ -1078,18 +1010,18 @@
     }
   });
 
-  // tlBee.fromTo("#scroll-image-bee",
-  //   { width: "60%", y: 100 },  // Initial state
-  //   { width: "100%", y: 0, ease: "power2.out", duration: 3 },
-  //   0
-  // );
+  tlBee.fromTo("#scroll-image-bee",
+    { scale: 0.7, y: 100 },
+    { scale: 1, y: 0, ease: "power2.out", duration: 2 },
+    0
+  );
 
-  tlBee.to("#scroll-image-bee", {
-    width: "100%",
-    y: 0,
-    ease: "power2.out",
-    duration: 3,
-  });
+  // tlBee.to("#scroll-image-bee", {
+  //   width: "100%",
+  //   y: 0,
+  //   ease: "power2.out",
+  //   duration: 3,
+  // });
 
   tlBee.to({}, { duration: 2 });
 
@@ -1441,7 +1373,7 @@
   );
 
   // Wait before starting SPRING
-  tl0.addLabel("step1", "+=1.5");
+  tl0.addLabel("step1", "+=2");
 
   // === SPRING in ===
   tl0.to("#video-spring", { opacity: 1, duration: 2 }, "step1");
@@ -1451,17 +1383,17 @@
   tl0.fromTo("#card-spring",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step1+=1"
+    "step1+=0.5"
   );
 
   tl0.fromTo("#env-spring",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step1+=1"
+    "step1+=0.5"
   );
 
   // Wait before SUMMER
-  tl0.addLabel("step2", "step1+=3");
+  tl0.addLabel("step2", "step1+=4");
 
   // === SUMMER in ===
   tl0.to("#video-spring", { opacity: 0, duration: 2 }, "step2");
@@ -1472,17 +1404,17 @@
   tl0.fromTo("#card-summer",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step2+=1"
+    "step2+=0.5"
   );
 
   tl0.fromTo("#env-summer",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step2+=1"
+    "step2+=0.5"
   );
 
   // Wait before END
-  tl0.addLabel("step3", "step2+=3");
+  tl0.addLabel("step3", "step2+=4");
 
   // === END in ===
   tl0.to("#video-summer", { opacity: 0, duration: 2 }, "step3");
@@ -1493,13 +1425,13 @@
   tl0.fromTo("#card-end",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step3+=2"
+    "step3+=1"
   );
 
   tl0.fromTo("#env-end",
     { opacity: 0, y: 50 },
     { opacity: 1, y: 0, duration: 2 },
-    "step3+=2"
+    "step3+=1"
   );
 
 </script>
