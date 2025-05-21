@@ -269,7 +269,7 @@
     </div>
   </section>
 
-  <section id="section7" class="section section-7" style="margin-bottom: 120px;" >
+  <section id="section7" class="section section-7" style="margin-bottom: -120px;" >
     <div class="container">
         <div class="main_block">
           <div class="top">HONEY = ENERGY</div>
@@ -341,7 +341,7 @@
             winter! And summer, with increasing heat periods, is no less taxing.</p>
         </div>
 
-        <div class="text">HIIVE REPLICATING THE CONDITIONS OF <br/>A AROUND 300-YEAR-OLD TREE CAVITY</div>
+        <div class="text" style="margin-bottom: 0;" >HIIVE REPLICATING THE CONDITIONS OF <br/>A AROUND 300-YEAR-OLD TREE CAVITY</div>
       </div>
     </div>
   </section>
@@ -654,7 +654,7 @@
       </div>
     </div>
 
-    <div class="unfold-block" id="env-winter" style="right: unset; left: 20% ">
+    <div class="season-card" id="env-winter" style="right: unset; left: 20% ">
       <div class="top">
         <div class="img-container">
           <img src="./images/icons/7.png" alt="img">
@@ -1003,25 +1003,18 @@
   const tlBee = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-animate-bee",
-      start: "top top",    // Start when the section hits the top of the viewport
-      end: "+=100%",       // Keep the section pinned for 100% of the viewport height
+      start: "top top",
+      end: "+=100%",
       pin: true,
-      scrub: 1,            // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      scrub: 1,
     }
   });
 
   tlBee.fromTo("#scroll-image-bee",
-    { scale: 0.6, y: 150 },
+    { scale: 0.5,width: '100%', y: 320 },
     { scale: 1, y: 0, ease: "power2.out", duration: 2 },
     0
   );
-
-  // tlBee.to("#scroll-image-bee", {
-  //   width: "100%",
-  //   y: 0,
-  //   ease: "power2.out",
-  //   duration: 3,
-  // });
 
   tlBee.to({}, { duration: 2 });
 
@@ -1038,6 +1031,7 @@
     duration: 2,
     ease: "power2.out",
   });
+
   // gsap.to("#scroll-image-bee",{
   //   scrollTrigger: {
   //     trigger: ".section-animate-bee",
@@ -1354,7 +1348,7 @@
   });
 
   tl0.fromTo("#video-winter",
-    { scale: 0.6, y: 150 },
+    { scale: 0.5, y: 150 },
     { scale: 1, y: 0, ease: "power2.out", duration: 2 },
     0
   );
