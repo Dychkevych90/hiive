@@ -214,7 +214,8 @@
   .gradient-block-bee,
   .gradient-block-test,
   .gradient-block-tree,
-  .gradient-block-behandeln {
+  .gradient-block-behandeln,
+  .gradient-block-advantures {
     position: absolute;
     bottom: -1px;
     left: 0;
@@ -251,7 +252,8 @@
   #scroll-test,
   #scroll-image-bee,
   #scroll-image-tree,
-  #scroll-image-behandeln {
+  #scroll-image-behandeln,
+  #scroll-image-advantures {
     width: 100%;
     transform: translateY(0);
     transition: transform 0.3s ease;
@@ -432,48 +434,46 @@
   }
 
   .section-column {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
     width: 100%;
-    gap: 15px;
 
     &--item {
       display: flex;
       align-items: center;
       width: 100%;
-      max-height: 58px;
+      flex-direction: column;
 
       .left {
-        flex: 1;
-        max-width: 150px;
+        max-width: 100px;
+        width: 100%;
+        border-radius: 50%;
         background-color: variables.$primary-color;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-top-left-radius: 32px;
-        border-bottom-left-radius: 32px;
-        height: 58px;
+        height: 100px;
+        min-height: 100px;
+        margin-bottom: 15px;
 
         img {
-          width: 45px;
-          height: 45px;
+          width: 70px;
+          height: 70px;
         }
       }
 
       .right {
-        //font-family: "FuturaStdR", serif;
-        flex: 2;
-        background-color: variables.$secondary-color;
-        border-top-right-radius: 32px;
-        border-bottom-right-radius: 32px;
         height: 58px;
         color: variables.$text-color-dark;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 22px;
-        padding-left: 20px;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
+        text-align: center;
       }
     }
   }
@@ -808,12 +808,43 @@
 }
 
 .section-11 {
-  margin: 50px 0 100px;
+  margin: 50px 0 0;
+
+  .main_block {
+    padding: 20px;
+  }
 
   .main_block .top,
   .main_block,
   .main_block p {
     background-color: variables.$green;
+    font-size: 18px;
+  }
+
+  .new_block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .left {
+      flex: 1;
+      background-color: variables.$secondary-color;
+      margin-right: 30px;
+      min-height: 500px;
+    }
+
+    .right {
+      flex: 1;
+      border-radius: 20px;
+      max-height: 500px;
+
+      video {
+        width: 100%;
+        border-radius: 20px;
+        max-height: 500px;
+        object-fit: cover;
+      }
+    }
   }
 }
 
@@ -830,7 +861,7 @@
 }
 
 .summer-section {
-  margin: 100px 0;
+  margin: 100px 0 50px;
 
   .container {
     display: flex;
@@ -1054,7 +1085,7 @@
   flex-direction: row;
   background-color: variables.$secondary-color;
   border-radius: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   .item {
     width: 50%;
@@ -1117,7 +1148,6 @@
   opacity: 0;
   pointer-events: none;
 }
-
 
 .video-block-wrapper {
   position: relative;
