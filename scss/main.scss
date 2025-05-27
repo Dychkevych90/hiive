@@ -823,14 +823,22 @@
 
   .new_block {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
+    position: relative;
 
     .left {
       flex: 1;
       background-color: variables.$secondary-color;
       margin-right: 30px;
-      min-height: 500px;
+      min-height: 650px;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+        max-height: 650px;
+        object-position: left;
+      }
     }
 
     .right {
@@ -844,6 +852,12 @@
         max-height: 500px;
         object-fit: cover;
       }
+    }
+
+    .grass {
+      position: absolute;
+      bottom: 0;
+      right: -90px;
     }
   }
 }
